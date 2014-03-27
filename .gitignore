@@ -1,0 +1,9 @@
+.ropeproject/
+*.pyc
+stacktach/db.sqlite
+worker.log*
+.venv
+*.egg-info/
+etc/deployments.yaml
+stacktach/settings.py
+db.sqlite3

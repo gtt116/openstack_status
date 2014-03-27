@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.css">
+    <script src="/static/js/bootstrap.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>API Status</h1>
+        <p id="status" class="{{ aggregate.status }}">
+          Last updated: {{aggregate.updated_at}}
+          status: {{aggregate.status}}
+        </p>
+        <table class="table table-bordered">
+          {% for result in results %}
+          <tr>
+            <td>{{ result.check_name }}</td>
+            <td>{{ result.check_path }}</td>
+            <td>{{ result.elapse|floatformat:2 }} s</td>
+            <td>{{ result.status }}</td>
+            <td>{{ result.exception }}</td>
+            <td>{{ result.updated_at }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+
+    <div>
+    </div>
+  </body>
+</html>
